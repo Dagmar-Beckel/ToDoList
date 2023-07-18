@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var toDoItems: [ToDoItem] = []
+    @Environment(\.managedObjectContext) var context
     @State private var showNewTask = false
+    @FetchRequest(
+            entity: ToDo.entity(), sortDescriptors: [ NSSortDescriptor(keyPath: \ToDo.id, ascending: false) ])
+        
+    var toDoItems: FetchedResults<ToDo>
+    
     
     var body: some View {
         VStack{
@@ -21,25 +26,37 @@ struct ContentView: View {
                 Button(action: {
                     self.showNewTask = true
                 }){
-                Text("+")
+                    Text("+")
                 }
             }
             .padding()
             Spacer()
-        }
-        List {
-            ForEach(toDoItems){ toDoItem in
-                if toDoItem.isImportant == true {
-                    Text("‼️" + toDoItem.title)
-                } else {
-                    Text(toDoItem.title)
-                }
+            
+            List {
+                ForEach(toDoItems){ toDoItem in
+                    if toDoItem.isImportant == true {
+                        Text("‼️" + (toDoItem.title ?? "No title"))
+                    } else {Text(toDoItem.title ?? "No title")
+                    }
+                        }
+                .onDelete(perform: deleteTask)
             }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
-        
+            
         if showNewTask {
-            NewToDoView(toDoItems: $toDoItems, title: "", isImportant: false)
+            NewToDoView(title: "", isImportant: false)
+                }
+    }
+    private func deleteTask(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { toDoItems[$0] }.forEach(context.delete)
+            
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
         }
     }
 }
