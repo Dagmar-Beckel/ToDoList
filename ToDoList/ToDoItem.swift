@@ -9,5 +9,11 @@ import Foundation
 
 class ToDoItem{
     var title = ""
-    var isImportant = ""
+    var isImportant: Bool = false
+    
+    init(title: String, isImportant: Bool = false){
+        self.title = title
+        self.isImportant = isImportant
+    }    
 }
+

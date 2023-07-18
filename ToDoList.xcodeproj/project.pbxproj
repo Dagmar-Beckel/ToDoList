@@ -12,6 +12,7 @@
 		896C9E562A66DA2700C4E963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896C9E552A66DA2700C4E963 /* Assets.xcassets */; };
 		896C9E592A66DA2700C4E963 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896C9E582A66DA2700C4E963 /* Preview Assets.xcassets */; };
 		896C9E602A66DAAF00C4E963 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C9E5F2A66DAAF00C4E963 /* ToDoItem.swift */; };
+		896C9E622A66E1F600C4E963 /* NewToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C9E612A66E1F600C4E963 /* NewToDoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		896C9E552A66DA2700C4E963 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		896C9E582A66DA2700C4E963 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		896C9E5F2A66DAAF00C4E963 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		896C9E612A66E1F600C4E963 /* NewToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				896C9E512A66DA2600C4E963 /* ToDoListApp.swift */,
 				896C9E532A66DA2600C4E963 /* ContentView.swift */,
 				896C9E5F2A66DAAF00C4E963 /* ToDoItem.swift */,
+				896C9E612A66E1F600C4E963 /* NewToDoView.swift */,
 				896C9E552A66DA2700C4E963 /* Assets.xcassets */,
 				896C9E572A66DA2700C4E963 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				896C9E542A66DA2600C4E963 /* ContentView.swift in Sources */,
 				896C9E522A66DA2600C4E963 /* ToDoListApp.swift in Sources */,
 				896C9E602A66DAAF00C4E963 /* ToDoItem.swift in Sources */,
+				896C9E622A66E1F600C4E963 /* NewToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
