@@ -12,6 +12,8 @@ struct NewToDoView: View {
     
     @State var title: String
     @State var isImportant: Bool
+    @State var isAssignment: Bool
+    @State var isProject: Bool
     
     var body: some View {
         VStack(){
@@ -19,7 +21,14 @@ struct NewToDoView: View {
                 .font(.title3)
             
             TextField("Enter the task description...", text: $title)
-            
+                .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+
+            Toggle(isOn: $isAssignment) {
+                Text("Is it an Assignment?")
+            }
+            Toggle(isOn: $isProject){
+                Text("Is it a Project or Essay?")
+            }
             Toggle(isOn: $isImportant) {
                 Text("Is it Important?")
             }
@@ -48,7 +57,7 @@ struct NewToDoView: View {
 
 struct NewToDoView_Previews: PreviewProvider {
     static var previews: some View {
-        NewToDoView(title: "", isImportant: false)
+        NewToDoView(title: "", isImportant: false, isAssignment: false, isProject: false)
         
     }
 }

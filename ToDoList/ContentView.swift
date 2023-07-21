@@ -45,7 +45,7 @@ struct ContentView: View {
         }
             
         if showNewTask {
-            NewToDoView(title: "", isImportant: false)
+            NewToDoView(title: "", isImportant: false, isAssignment: false, isProject: false)
                 }
     }
     private func deleteTask(offsets: IndexSet) {
